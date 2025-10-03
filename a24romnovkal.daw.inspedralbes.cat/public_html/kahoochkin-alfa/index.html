@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <script src="script.js" type="module" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-container">
+  <h1>Quiz</h1>
+  <form id="loginForm" class="card">
+    <input id="loginUser" placeholder="Usuari" required>
+    <input id="loginPass" type="password" placeholder="Contrasenya" required>
+    <button class="btn" type="submit">Entrar</button>
+    <button class="btn secondary" type="button" id="logoutBtn" style="display:none">Sortir</button>
+    <span id="loginMsg"></span>
+  </form>
+
+  <section id="adminArea" class="card" style="display:none">
+  <h2>Admin</h2>
+
+  <div id="adminList">
+    <h3>Qüestionaris</h3>
+    <div id="quizList"></div>
+
+    <h4>Crear nou</h4>
+    <form id="createQuizForm">
+      <input id="newQuizUid" placeholder="UID (ex: brands-v1)" required>
+      <input id="newQuizTitle" placeholder="Títol (opcional)">
+      <button class="btn" type="submit">Crear</button>
+      <span id="createQuizMsg" style="margin-left:.5rem;"></span>
+    </form>
+  </div>
+
+  <div id="editor" style="display:none; margin-top:1rem;">
+    <h3>Editar qüestionari</h3>
+    <form id="quizMetaForm" style="margin-bottom:1rem;">
+      <input id="editQuizUid" placeholder="UID" required>
+      <input id="editQuizTitle" placeholder="Títol">
+      <button class="btn secondary" type="submit">Desar cambio</button>
+      <button class="btn secondary" type="button" id="backToList">← Tornar</button>
+      <span id="quizMetaMsg" style="margin-left:.5rem;"></span>
+    </form>
+
+    <h4>Preguntes</h4>
+    <div id="questionsWrap"><em>Sense preguntes.</em></div>
+
+    <h4 style="margin-top:1rem;">Afegir pregunta</h4>
+    <form id="addQuestionForm" style="margin:.5rem 0;">
+      <textarea id="aqText" rows="2" cols="60" placeholder="Pregunta" required></textarea><br>
+      <input id="aqImage" placeholder="Imatge (URL)">
+      <div>
+        <input id="aqAns1" placeholder="Resposta 1" required>
+        <input id="aqAns2" placeholder="Resposta 2" required>
+        <input id="aqAns3" placeholder="Resposta 3" required>
+        <input id="aqAns4" placeholder="Resposta 4" required>
+      </div>
+      <label>Correcta (1-4):
+        <input id="aqCorrect" type="number" min="1" max="4" value="1" required>
+      </label>
+      <button class="btn" type="submit">Afegir</button>
+      <span id="addQMsg" style="margin-left:.5rem;"></span>
+    </form>
+  </div>
+</section>
+<section id="playArea" class="card">
+      <div class="row cols-2">
+        <div>
+          <label for="quizSelect" class="inline">Triar qüestionari:</label>
+          <select id="quizSelect"></select>
+        </div>
+        <label class="inline">
+          <input type="checkbox" id="shuffleChk" checked> barrejar
+        </label>
+      </div>
+      <button id="gamebegin" class="btn mt-16">Start the game</button>
+    </section>
+  <div id="questionari" class="card"></div>
+</body>
+</html>
