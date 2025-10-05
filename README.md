@@ -7,7 +7,6 @@ DAW n2 first project
 - [Features](#features)
 - [Installation](#installation)
   - [Requirements](#requirements)
-  - [Setup](#setup)
 - [Usage](#usage)
   - [Player Mode](#player-mode)
   - [Admin Mode](#admin-mode)
